@@ -8,7 +8,7 @@ export interface BuilderElement {
   construct: (id: string) => BuilderElementInstance;
 
   designerBtnElement: {
-    icon: React.ReactElement;
+    icon: React.ElementType;
     label: string;
   };
 

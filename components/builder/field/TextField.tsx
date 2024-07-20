@@ -18,7 +18,7 @@ export const TextFieldBuilderElement: BuilderElement = {
     },
   }),
   designerBtnElement: {
-    icon: <MdTextFields />,
+    icon: MdTextFields,
     label: "Text Field",
   },
   designerComponent: () => <div>Designer Component</div>,
