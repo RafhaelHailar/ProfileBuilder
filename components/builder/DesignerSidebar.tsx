@@ -1,9 +1,11 @@
 import React from "react";
+import SideBarBtnElement from "./SideBarBtnElement";
+import { BuilderElements } from "./BuilderElements";
 
 function DesignerSidebar() {
   return (
     <aside className="w-[600px] max-w-[600px] flex flex-col flex-grow h-full bg-background">
-      Designer Sidebar
+      <SideBarBtnElement builderElement={BuilderElements.TextField} />
     </aside>
   );
 }
