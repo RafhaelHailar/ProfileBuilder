@@ -12,7 +12,7 @@ export interface BuilderElement {
     label: string;
   };
 
-  designerComponent: React.FC;
+  designerComponent: React.FC<{ elementInstance: BuilderElementInstance }>;
   builderComponent: React.FC;
   propertiesComponent: React.FC;
 }
