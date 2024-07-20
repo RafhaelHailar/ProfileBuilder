@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
-import { ElementsType, BuilderElement } from "../BuilderElements";
+import {
+  ElementsType,
+  BuilderElement,
+  BuilderElementInstance,
+} from "../BuilderElements";
 import { MdTextFields } from "react-icons/md";
 
 const type: ElementsType = "TextField";
@@ -21,7 +25,17 @@ export const TextFieldBuilderElement: BuilderElement = {
     icon: MdTextFields,
     label: "Text Field",
   },
-  designerComponent: () => <div>Designer Component</div>,
+  designerComponent: DesignerComponent,
   builderComponent: () => <div>Builder Component</div>,
   propertiesComponent: () => <div>Properties Component</div>,
 };
+
+function DesignerComponent({
+  elementInstance,
+}: {
+  elementInstance: BuilderElementInstance;
+}) {
+  return (
+    <div className="text-primary">{elementInstance.extraAttributes?.label}</div>
+  );
+}
