@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   ElementsType,
   BuilderElement,
   BuilderElementInstance,
 } from "../BuilderElements";
 import { MdTextFields } from "react-icons/md";
+import { cn } from "@/lib/utils";
 
 const type: ElementsType = "TextField";
 
@@ -41,6 +42,17 @@ function DesignerComponent({
 }: {
   elementInstance: BuilderElementInstance;
 }) {
+  const [isEditing, setIsEditing] = useState<boolean>(true);
   const element = elementInstance as CustomInstance;
-  return <div className="text-primary">{element.extraAttributes.label}</div>;
+
+  return (
+    <div className="text-primary">
+      <div
+        onClick={() => setIsEditing(true)}
+        className={cn("font-bold", isEditing && "hidden")}
+      >
+        {element.extraAttributes.label}
+      </div>
+    </div>
+  );
 }
